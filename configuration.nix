@@ -15,6 +15,7 @@
     ./hardware-configuration.nix
     ./modules/auto-upgrade.nix
     ./modules/fail2ban.nix
+    ./services/nginx.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
