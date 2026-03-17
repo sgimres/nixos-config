@@ -6,16 +6,21 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 
 {
+  disabledModules = [ "virtualisation/oci-containers.nix" ];
+
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./modules/auto-upgrade.nix
     ./modules/fail2ban.nix
     ./services/nginx.nix
+
+    "${inputs.nixpkgs-unstable}/nixos/modules/virtualisation/oci-containers.nix"
   ];
 
   # Use the systemd-boot EFI boot loader.
