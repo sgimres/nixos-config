@@ -73,6 +73,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.user = {
     isNormalUser = true;
+    linger = true;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEdDrXRJ5wsiPNqrjnCC7XIt/7aAJ9nBMoD4NNXASWHC"
     ];
