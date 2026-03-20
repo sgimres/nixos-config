@@ -17,7 +17,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./modules/auto-upgrade.nix
-    ./modules/caddy.nix
+    ./services/caddy.nix
     ./modules/fail2ban.nix
     # ./services/nginx.nix
 
