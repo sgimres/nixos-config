@@ -17,8 +17,9 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./modules/auto-upgrade.nix
+    ./modules/caddy.nix
     ./modules/fail2ban.nix
-    ./services/nginx.nix
+    # ./services/nginx.nix
 
     "${inputs.nixpkgs-unstable}/nixos/modules/virtualisation/oci-containers.nix"
   ];
@@ -28,6 +29,7 @@
   # boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
+  programs.nix-ld.enable = true;
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
@@ -97,6 +99,7 @@
     wget
     htop
     git
+    tmux
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -112,6 +115,7 @@
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
+    ports = [ 2222 ];
     settings = {
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
@@ -123,9 +127,8 @@
   # Open ports in the firewall.
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [
-    20
-    80
-    443
+    2222
+    22
   ];
   # networking.firewall.allowedUDPPorts = [ ... ];
 
