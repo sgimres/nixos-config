@@ -6,8 +6,8 @@
     # :TODO make username dynamic later
     flake = "/home/user/nixos-config";
     flags = [
-      "--update-input"
-      "nixpkgs" # Tells the server to fetch new updates itself
+      "--update-input" 
+      "nixpkgs"
       "--commit-lock-file" # Saves the new versions locally
     ];
     dates = "02:00";
