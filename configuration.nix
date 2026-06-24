@@ -31,6 +31,8 @@
   networking.hostName = "nixos"; # Define your hostname.
   programs.nix-ld.enable = true;
 
+  services.tailscale.enable = true;
+
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
